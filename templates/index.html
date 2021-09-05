@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+<section class="position-relative py-6">
+  <img class="img-fluid" src="/nature.jpg" alt="">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 absolute text-block">
+        <div class="bg-white rounded-lg shadow p-5"><strong class="text-uppercase text-secondary d-inline-block mb-2 text-sm">Featured</strong>
+          <h2 class="mb-3">Escape the city today</h2>
+          <p class="text-muted">As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity</p><a class="btn btn-link p-0" href="post.html">Continue reading <i class="fa fa-long-arrow-alt-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      <section class="py-6"> 
+      <div class="album py-5 bg-light">
+        <div class="container"> 
+          <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+          <div class="row">
+              {% for blog in blogs %}
+              <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+              <!-- <div class="card shadow-sm"> -->
+                <h5 class="shadow"><a href={% url 'blogdetail' blog.slug %}>{{blog.title}}</a></h5>
+                <img class="card-img-top" src="/media/pics/{{blog.img}}" alt="..."/></a>
+                <div class="card-body">
+                  <p class="card-text">{{blog.title}} : This blog is created at {{blog.createdAt}} by {{blog.user.username}}. The blog is about {{blog.title}}. More on blog: {{blog.content|safe}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-ouline-secondary"><a href={% url 'blogdetail' blog.slug %}>Read More</a></button>
+                      <!-- <button type="button" class="btn btn-sm btn-outline-secondary">{{blog.user.username}}</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+            <!-- </div> -->
+            
+          <!-- </div> -->
+        </div>
+      </div>
+    </section>
+{% endblock %}

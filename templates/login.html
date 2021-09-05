@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1 class="text-center">Login</h1>
+<div class="container">
+    <div class="mb-3 d-flex align-items-center">
+    <label for="username" class="form-label">UserName</label>&nbsp;
+    <input type="text" id="username" class="form-control" name="username" placeholder="Enter UserName"><br><br>
+    </div>
+    <div class="mb-3 d-flex align-items-center">
+    <label for="password" class="form-label">Password</label>&nbsp;
+    <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password"><br>
+    </div>
+    <div class="mb-3 d-flex align-items-center">
+    <button type="submit"  class="btn-primary" onclick="login()">Login</button>
+    </div>
+
+</div>
+
+{% endblock %}
