@@ -10,7 +10,9 @@ class BlogModel(models.Model):
     title=models.CharField(max_length=100)
     name=models.CharField(max_length=100)
     slug=models.SlugField(max_length=1000, null=True, blank=True)
-    content=FroalaField(theme='dark')
+    #content=FroalaField(theme='dark')
+    #content=TextField()
+    content=models.CharField(max_length=1000)
     user=models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     img=models.ImageField(upload_to="pics")
     createdAt=models.DateTimeField(auto_now_add=True) #updated one time, when probably model is created

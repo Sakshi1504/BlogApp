@@ -18,6 +18,7 @@ def register(request):
     tm=datetime.datetime.now()
     context['tim']=tm
     return render(request, "register.html", context)
+    
 def login(request):
     context={}
     tm=datetime.datetime.now()

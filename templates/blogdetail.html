@@ -1,21 +1,27 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block body %}
-<section class="py-6">
-     <div class="container">
+
+
+<section>
+    <div class="container">
         <div class="row text-center">
-            <div class="col-xl-10 mx-auto">
-                <img class="img-fluid mb-5" src="/media/{{blogobj.img}}" alt="">
-            </div>
+            <div class="col-xl-10 mx-auto py-1"><img class="img mb-3"  style="height: 250px; width: 50%;"
+                    src="/media/{{blogobj.img}}"alt="Image not Found"></div>
+        </div>
+        <div class="col-xl-2 mx-auto text-content">
+            <h4>{{blogobj.title}}</h4>
         </div>
         <div class="row">
             <div class="col-xl-8 col-lg-10 mx-auto">
-                <div class="text-content"><!--Safe is used to clean up the content-->
-                    {{blogobj.content|safe}}
+                <div class="text-content div-blog">
+                  <p style="word-break: break-all;"> {{blogobj.content|safe}}</p>
+                  <!-- <p style="color:red;word-break: break-all;">A red paragraphhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhparagraphhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhparagraphhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh.</p> -->
+                  <!-- <p style="color:red;word-break: break-all;">{{var}}</p> -->
+                  <!-- {{blogobj.content}} -->
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 {% endblock %}

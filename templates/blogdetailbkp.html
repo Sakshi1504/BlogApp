@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section class="py-6">
+     <div class="container">
+        <div class="row text-center">
+            <div class="col-xl-10 mx-auto">
+                <img class="img-fluid mb-5" src="/media/{{blogobj.img}}" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-8 col-lg-10 mx-auto">
+                <div class="text-content"><!--Safe is used to clean up the content-->
+                    {{blogobj.content|safe}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

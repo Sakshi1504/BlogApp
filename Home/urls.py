@@ -11,5 +11,6 @@ urlpatterns = [
     path('seeblog', views.seeblog, name="seeblog"),
     path('blogdelete/<id>', views.blogdelete, name="blogdelete"),
     path('blogupdate/<slug>', views.blogupdate, name="blogupdate"),
-    path('register', views.register, name="register")
+    path('register/', views.register, name="register"),
+    path('register/login', views.login, name="login"),
 ]
