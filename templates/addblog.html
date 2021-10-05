@@ -4,22 +4,25 @@
 <div class="container">
     <form method="POST" class="mt-3 pt-3 mb-3 pb-3" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="row" class="col-md-12">
-            <label>Enter the title</label>
+        <div  class="row" class="col-md-10">
+            <label>Enter the title:</label>
             <input type="text" id="title" name="title">
-        </div>
-        <div class="col-md-12">
+        </div><br>
+        <div class="row" class="col-md-12">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             {{form.media}}
-            {{form.as_p}}
+            {{form}}
         </div>
-        
+        <br>
         <div class="col-md-12">
             <input type="file" id="image" name="image">
         </div>
+
         <div class="col-md-12 mt-5">
             <button type="submit" class="btn btn-primary">Create Blog</button>
         </div>
     </form>
+    <br><br><br><br><br><br> 
 </div>
 
 
